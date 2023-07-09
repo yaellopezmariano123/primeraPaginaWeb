@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A&ntilde;o bisiesto </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css"/>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-grid.min.css"/>
+
+        <link rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style/estilo.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Ejemplo de JavaScript</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Hola Mundo</h4>
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-primary" onclick="saludar();">Saludar</button>
+                        <button class="btn btn-outline-success" onclick="navegar();"> ir al sitio</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Saludo Personalizado</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label" for="txtNombre">Introduce tu nombre</label>
+                            <input id="txtNombre" class="form-control" type="text" placeholder="Nombre completo." />
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-primary" onclick="generarSaludo();">Saludo personalizado</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Calcular Aritmetica</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label" for="txtNombre">Número 1</label>
+                            <input id="txtNumero1" class="form-control" type="text" />
+                        </div>
+                        <div class="form-group mt-2">
+                            <label class="form-label" for="txtNombre">Número 2</label>
+                            <input id="txtNumero2" class="form-control" type="text" />
+                        </div>
+                        <div class="mt-4">
+                            <button class="btn btn-primary" onclick="realizarOperacion(1);">Sumar</button>
+                            <button class="btn btn-primary" onclick="realizarOperacion(2);">Restar</button>
+                            <button class="btn btn-primary" onclick="realizarOperacion(3);">Multiplicar</button>
+                            <button class="btn btn-primary" onclick="realizarOperacion(4);">Dividir</button>
+                        </div>
+                        <div class="mt-2">
+                            <label>Resultado:</label>
+                            <input id="txtResultado" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Calcular anio</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label> introduse el numero de anio</label>
+                            <input id="txtAnio" type="number" class="form-control" value="" />
+                            
+                        </div>
+                        <div class="mt-4">
+                            <button onclick="calcularBisiesto();" class="btn btn-outline-primary"> Aqui va el resultado</button>
+                        </div>
+                        <div class="mt-4">
+                            <label id="ResultadoAnio" class="form-label fw-bold">aqui ba el resultado</label>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <div class="card">
+                        <div class="card-header">
+                        <h4>Cotizador de churros</h4>
+                        </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label" for="cmbTamanio">Tamaño:</label>
+                            <select id="cmbTamanio" class="form-select">
+                                <option value="10.0">Chico ($10.0)</option>
+                                <option value="15.0">Mediano ($15.0)</option>
+                                <option value="20.0">Grande ($20.0)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Aditivos</label>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="colchestos">
+                            <label class="form-check-label" for="colchestos">col ($5.00)</label>
+                        </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="salsachetos">
+                                <label class="form-check-label" for="salsachetos">salsa ($2.00)</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="limonChetos">
+                                <label class="form-check-label" for="limonChetos">crema ($3.00)</label>
+                            </div>
+                                <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="cueritoChetos">
+                                <label class="form-check-label" for="cueritoChetos">cueritosChetos ($2.00)</label>
+                            </div>
+                      </div>
+                      <div>
+                        <label class="form-label">Descuentos</label>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="descuChetos">
+                            <label class="form-check-label" for="descuChetos">(10% de descuento)</label>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <button id="calcularBtn" class="btn btn-outline-success">Calcular costo</button>
+                      </div>
+                      <div class="form-group mt-4">
+                        <label class="form-label" for="txtTotal">Total</label>
+                        <input id="txtTotal" readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+        </div>
+    </div>
+  
+   
+    <!--
+      <h1>A&ntilde;o bisiesto</h1>
+  <form >
+    <input type="text" id="yearInput" placeholder="Ingrese un a&ntilde;o">
+    <button type="button" onclick="verificarBisiesto()">Verificar</button>
+  </form>
+  <div id="resultContainer"></div>
+  <div>
+      <h2>Cu&aacute;ndo va a ser el pr&oacute;ximo 29 de febrero?</h2>
+    <p>
+      Por ello, estas horas extra se van sumando cada a&ntilde;o y se acaban convirtiendo en un d&iacute;a, dando lugar a lo que conocemos como a&ntilde;o bisiesto. El &uacute;ltimo a&ntilde;o que bisiesto fue en 2020, por lo que el mes de febrero de 2023 tendr&aacute; 28 d&iacute;as y no tendremos otro a&ntilde;o bisiesto hasta 2024.
+    </p> <br><br> 
+  </div> --->
+  <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="style/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="js/javaScript.js"></script>
+ 
+</body>
+</html>
